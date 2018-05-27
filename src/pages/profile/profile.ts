@@ -5,13 +5,6 @@ import { ClienteDTO } from '../../models/cliente.dto';
 import { ClienteService } from '../../services/domain/cliente.service';
 import { API_CONFIG } from '../../config/api.config';
 
-/**
- * Generated class for the ProfilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-profile',
@@ -37,7 +30,7 @@ export class ProfilePage {
           this.cliente = response;
           this.getImageIfExists();
         },
-          error => { });
+          error => {});
     }
   }
 
@@ -46,7 +39,7 @@ export class ProfilePage {
       .subscribe(Response => {
         this.cliente.imageUrl = `${API_CONFIG.bucketBaseUrl}/cp${this.cliente.id}.jpg`;
       },
-        error => { })
+        error => {})
   }
 
 }
